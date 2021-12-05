@@ -62,7 +62,9 @@ h1 {
 
 .h3-notes {
   position: relative;
-  right: 290px;
+  right: 310px;
+  margin-bottom: 10px;
+  margin-top: 25px;
 }
 
 .font-os {
@@ -75,23 +77,30 @@ h1 {
 }
 
 .input-white {
-  background-color: white;
   border-radius: 3px;
-  border-width: thin;
+  border-width: 2px;
   border-color: lightgray;
   padding-right: 100px;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  font-size: medium;
 }
 
 .notes-section {
   width: 65%;
   position: relative;
-  left: 220px;
+  left: 240px;
 }
 
 .notes-input {
-  padding-right: 475px;
+  padding-right: 470px;
   padding-bottom: 100px;
+  background-color: white;
+  padding-top: 8px;
+  font-size: medium;
+  border-radius: 3px;
+  border-width: 2px;
+  border-color: lightgray;
 }
 
 .save-button {
@@ -104,7 +113,7 @@ button {
   background-color: #6f2da8;
   color: white;
   position: relative;
-  left: 240px;
+  left: 275px;
   border: none;
 }
 

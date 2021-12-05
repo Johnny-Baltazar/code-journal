@@ -20,7 +20,7 @@
       <h2 class="cj-header">Code Journal</h2>
     </div>
     <div data-view="entry-form">
-      <form class="form">
+      <form id="form">
         <div class="new-entry">
           <h1>New Entry</h1>
         </div>
@@ -31,16 +31,16 @@
           <div class="title-photo">
             <h3 class="h3-title font-os">Title</h3>
             <label for="title"></label>
-            <input class="input-white input-border" name="title" type="text" required="required">
+            <input class="input-white input-border" name="title" type="text" required maxlength="50">
             <h3 class="font-os photo-url">Photo URL</h3>
             <label for="photo-url"></label>
-            <input class="input-white input-border url-input" name="photo-url" type="url" required="required">
+            <input class="input-white input-border url-input" name="url" type="url" required>
           </div>
         </div>
         <div class="notes-section">
           <h3 class="h3-notes font-os">Notes</h3>
           <label for="notes"></label>
-          <input class="input-white notes-input input-border" name="notes" type="text" required="required">
+          <input class="notes-input" name="notes" type="text" required>
         </div>
         <div class="save-button">
           <button type="submit">SAVE</button>
