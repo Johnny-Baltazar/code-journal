@@ -7,7 +7,7 @@
 .heading {
   background-color: #6f2da8;
   color: white;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
 }
@@ -26,7 +26,6 @@
 }
 
 h1 {
-  text-align: right;
   font-family: "Proza Libre", sans-serif;
 }
 
@@ -71,19 +70,17 @@ h1 {
   font-family: "Open Sans", sans-serif;
 }
 
-.input-border:focus {
+.text-border:focus {
   border: 3px;
   outline: solid #6f2da8;
 }
 
-.input-white {
-  border-radius: 3px;
+.input-area {
+  border-radius: 4px;
   border-width: 2px;
   border-color: lightgray;
-  padding-right: 100px;
-  padding-bottom: 8px;
-  padding-top: 8px;
-  font-size: medium;
+  padding: 6px;
+  font-size: large;
 }
 
 .notes-section {
@@ -93,14 +90,12 @@ h1 {
 }
 
 .notes-input {
-  padding-right: 470px;
-  padding-bottom: 100px;
-  background-color: white;
-  padding-top: 8px;
-  font-size: medium;
-  border-radius: 3px;
+  font-size: larger;
+  border-radius: 4px;
   border-width: 2px;
   border-color: lightgray;
+  padding: 6px;
+  resize: none;
 }
 
 .save-button {
@@ -108,18 +103,17 @@ h1 {
 }
 
 button {
-  padding: 10px 15px;
+  padding: 7px 15px;
   border-radius: 3px;
   background-color: #6f2da8;
   color: white;
   position: relative;
-  left: 275px;
+  left: 280px;
   border: none;
 }
 
 @media screen and (max-width: 500px) {
   .cj-header {
-    position: relative;
     left: 18px;
   }
 
@@ -144,29 +138,29 @@ button {
   }
 
   .notes-section {
-    width: 65%;
-    position: relative;
     left: 0;
   }
 
   .form-container {
     text-align: start;
+    height: 850px;
   }
 
   .h3-notes {
     position: revert;
     margin-left: 15px;
-    margin-bottom: 10px;
   }
 
-  .input-white {
-    padding-right: 215px;
-    padding-bottom: 25px;
+  .input-area {
+    padding-right: 50px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: larger;
   }
 
   .notes-input {
-    padding-bottom: 100px;
     margin-left: 15px;
+    width: 380px;
   }
 
   button {
