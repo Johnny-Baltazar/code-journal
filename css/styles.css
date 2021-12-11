@@ -107,6 +107,34 @@ button {
   padding-left: 10px;
 }
 
+.lovelace-ul {
+  padding: 0;
+  margin-top: 0;
+  width: 60%;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+}
+
+.lighter-weight {
+  font-weight: lighter;
+}
+
+.h3-entries {
+  margin: 0;
+}
+
+.js-entries {
+  padding: 40px 0;
+}
+
+.js-ul {
+  padding: 0;
+  margin-top: 0;
+  width: 60%;
+}
+
 @media screen and (max-width: 480px) {
   .left-margin {
     margin-left: 20px;
@@ -148,32 +176,50 @@ button {
   .save-button {
     margin: 20px 30px 20px 0;
   }
-}
 
-ul.no-bullets {
-  list-style-type: none;
-}
+  .entries-width {
+    width: 367px;
+    position: relative;
+    right: 25px;
+  }
 
-.lighter-weight {
-  font-weight: lighter;
-}
+  .entries-header {
+    width: 100%;
+    text-align: start;
+    margin-left: 21px;
+  }
 
-.lovelace-ul {
-  padding: 0;
-  margin-top: 0;
-  width: 60%;
-}
+  .lovelace-row {
+    flex-wrap: nowrap;
+    width: 367px;
+    position: relative;
+    right: 25px;
+  }
 
-.h3-entries {
-  margin: 0;
-}
+  .entries-h1 {
+    position: relative;
+    left: 20px;
+    margin-right: 170px;
+  }
 
-.js-entries {
-  padding: 40px 0;
-}
+  .lovelace-img {
+    width: 100%;
+  }
 
-.js-ul {
-  padding: 0;
-  margin-top: 0;
-  width: 60%;
+  .lovelace-ul {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .js-entries {
+    padding: 10px 0;
+  }
+
+  .javascript-query {
+    width: 100%;
+  }
+
+  .js-ul {
+    margin-top: 20px;
+  }
 }
