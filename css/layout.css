@@ -18,9 +18,15 @@
   width: 100%;
 }
 
+@media screen and (max-width: 480px) {
+  .conatiner {
+    padding: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 900px;
+    max-width: 1200px;
   }
 
   .column-full,
@@ -31,4 +37,20 @@
   .column-half {
     width: 50%;
   }
+}
+
+.align-end {
+  text-align: end;
+}
+
+.align-start {
+  text-align: start;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.centered-items {
+  align-items: center;
 }

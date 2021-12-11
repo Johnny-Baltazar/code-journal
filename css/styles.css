@@ -1,57 +1,36 @@
-.form-container {
-  text-align: center;
+.container {
   background-color: #f2f2f2;
-  height: 800px;
 }
 
 .heading {
   background-color: #6f2da8;
   color: white;
-  height: 50px;
-  display: flex;
-  align-items: center;
 }
 
-.cj-header {
+.header {
   font-family: "Proza Libre", sans-serif;
   font-weight: 400;
-  position: relative;
-  left: 400px;
 }
 
-.new-entry {
-  width: 63%;
-  justify-content: center;
-  display: flex;
+.left-margin {
+  margin-left: 275px;
+}
+
+.entry-left {
+  margin-left: 275px;
 }
 
 h1 {
   font-family: "Proza Libre", sans-serif;
 }
 
-.image-row {
-  display: flex;
-  justify-content: center;
-}
-
-.placeholder-image {
-  width: 90%;
-}
-
-.image-div {
-  width: 25%;
-}
-
-.title-photo {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 25%;
-}
-
 .h3-title {
   margin: 0;
   padding-bottom: 10px;
+}
+
+.entries-img {
+  width: 50%;
 }
 
 .photo-url {
@@ -60,10 +39,11 @@ h1 {
 }
 
 .h3-notes {
-  position: relative;
-  right: 310px;
-  margin-bottom: 10px;
-  margin-top: 25px;
+  margin: 25px 0 10px 275px;
+}
+
+textarea {
+  margin-left: 46px;
 }
 
 .font-os {
@@ -83,12 +63,6 @@ h1 {
   font-size: large;
 }
 
-.notes-section {
-  width: 65%;
-  position: relative;
-  left: 240px;
-}
-
 .notes-input {
   font-size: larger;
   border-radius: 4px;
@@ -99,7 +73,7 @@ h1 {
 }
 
 .save-button {
-  margin-top: 20px;
+  margin: 20px 230px 20px 0;
 }
 
 button {
@@ -107,63 +81,99 @@ button {
   border-radius: 3px;
   background-color: #6f2da8;
   color: white;
-  position: relative;
-  left: 280px;
   border: none;
 }
 
-@media screen and (max-width: 500px) {
-  .cj-header {
-    left: 18px;
+.cj-entries {
+  align-items: center;
+}
+
+.entries-h1 {
+  text-align: end;
+  margin-right: 160px;
+}
+
+.new-button {
+  margin: 0 200px 0 0;
+}
+
+.entries-header {
+  width: 45%;
+  text-align: end;
+}
+
+.entries-span {
+  font-size: medium;
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .left-margin {
+    margin-left: 20px;
   }
 
-  .new-entry {
-    padding-left: 18px;
-    justify-content: flex-start;
+  form {
+    margin-left: 20px;
   }
 
-  .image-row {
-    flex-direction: column;
+  .entry-left {
+    margin-left: 0;
   }
 
-  .placeholder-image {
-    width: 375px;
-    height: 250px;
-    margin-left: 18px;
-  }
-
-  .title-photo {
-    padding-top: 20px;
-    margin-left: 15px;
-  }
-
-  .notes-section {
-    left: 0;
-  }
-
-  .form-container {
+  .image-div {
     text-align: start;
-    height: 850px;
+  }
+
+  .entries-img {
+    width: 90%;
+  }
+
+  .h3-title {
+    padding-top: 20px;
   }
 
   .h3-notes {
-    position: revert;
-    margin-left: 15px;
+    margin: 25px 0 10px;
   }
 
-  .input-area {
-    padding-right: 50px;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    font-size: larger;
+  textarea {
+    margin-left: 0;
+    width: 92%;
   }
 
-  .notes-input {
-    margin-left: 15px;
-    width: 380px;
+  .textarea-div {
+    text-align: start;
   }
 
-  button {
-    left: 330px;
+  .save-button {
+    margin: 20px 30px 20px 0;
   }
+}
+
+ul.no-bullets {
+  list-style-type: none;
+}
+
+.lighter-weight {
+  font-weight: lighter;
+}
+
+.lovelace-ul {
+  padding: 0;
+  margin-top: 0;
+  width: 60%;
+}
+
+.h3-entries {
+  margin: 0;
+}
+
+.js-entries {
+  padding: 40px 0;
+}
+
+.js-ul {
+  padding: 0;
+  margin-top: 0;
+  width: 60%;
 }
