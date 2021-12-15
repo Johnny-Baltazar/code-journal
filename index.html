@@ -16,12 +16,12 @@
 </head>
 <body>
   <div class="container">
-    <div class="row heading">
-      <div class="column-full left-margin">
-        <h2 class="header code-journal">Code Journal</h2>
+    <div data-view="entry-form hidden">
+      <div class="row heading">
+        <div class="column-full left-margin">
+          <h2 class="header code-journal">Code Journal</h2>
+        </div>
       </div>
-    </div>
-    <div data-view="entry-form">
       <form id="form">
         <div class="row new-entry">
           <div class="column-full entry-left">
@@ -61,7 +61,7 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="container">
+    <div data-view="entries" class="data-entries">
       <div class="row heading centered-items entries-width">
         <div class="column-full entries-header">
           <h2 class="header">Code Journal <span class="entries-span">Entries</span></h2>
@@ -79,18 +79,22 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row entries-row">
         <div class="column-half align-end">
           <img src="images/ada-lovelace.jpg" alt="Ada Lovelace" class="entries-img lovelace-img">
         </div>
         <div class="column-half">
+          <h3 class="h3-entries entries-title">Ada Lovelace</h3>
           <ul class="no-bullets lovelace-ul">
-            <li><h3 class="h3-entries">Ada Lovelace</h3></li>
-            <li><p>Augusta Ada King, Countess of Lovelace was an English mathematician and writer, chiefly known for her work on
-                Charles Babbage's proposed mechanical general-purpose computer, the analytical Engine.</p></li>
-            <li><p>She was the first to recgonize that the machine had applications beyond pure calculation, and to have published
+            <li>
+              <p>Augusta Ada King, Countess of Lovelace was an English mathematician and writer, chiefly known for her work on
+                Charles Babbage's proposed mechanical general-purpose computer, the analytical Engine.
+              </p>
+              <p>She was the first to recgonize that the machine had applications beyond pure calculation, and to have published
                 the
-                first algorithm intended to be carried out by such a machine.</p></li>
+                first algorithm intended to be carried out by such a machine.
+              </p>
+            </li>
           </ul>
         </div>
       </div>
@@ -99,10 +103,17 @@
           <img src="images/javascript-image.jpg" alt="javascript-image" class="entries-img javascript-query">
         </div>
         <div class="column-half">
+          <h3 class="h3-entries entries-title">Javascript</h3>
           <ul class="no-bullets js-ul javascript-query">
-            <li><h3 class="h3-entries">Javascript</h3></li>
-            <li><p>Javascript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.</p></li>
-            <li><p>Javascript is a high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p></li>
+            <li>
+              <p>
+                Javascript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.
+              </p>
+              <p>
+                Javascript is a high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic
+                typing, prototype-based object-orientation, and first-class functions.
+              </p>
+            </li>
           </ul>
         </div>
       </div>

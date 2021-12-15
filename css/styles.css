@@ -90,15 +90,15 @@ button {
 
 .entries-h1 {
   text-align: end;
-  margin-right: 160px;
+  margin-right: 170px;
 }
 
 .new-button {
-  margin: 0 200px 0 0;
+  margin: 0 230px 0 0;
 }
 
 .entries-header {
-  width: 45%;
+  width: 44%;
   text-align: end;
 }
 
@@ -133,6 +133,10 @@ ul.no-bullets {
   padding: 0;
   margin-top: 0;
   width: 60%;
+}
+
+.entries-row {
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 480px) {
