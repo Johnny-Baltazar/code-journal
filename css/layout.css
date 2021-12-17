@@ -5,12 +5,12 @@
 .container {
   max-width: 575px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 0 20px;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .column-full,
@@ -19,8 +19,9 @@
 }
 
 @media screen and (max-width: 480px) {
-  .conatiner {
-    padding: 0;
+  form,
+  .data-entries {
+    padding: 0 1.5rem;
   }
 }
 
@@ -41,10 +42,6 @@
 
 .align-end {
   text-align: end;
-}
-
-.align-start {
-  text-align: start;
 }
 
 .text-centered {

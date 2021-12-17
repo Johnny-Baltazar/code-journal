@@ -15,12 +15,15 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <div data-view="entry-form hidden">
-      <div class="row heading">
-        <div class="column-full left-margin">
+  <div class="container height-auto">
+    <div data-view="entry-form">
+      <div class="row heading cj-entries">
+        <div class="column-half left-margin">
           <h2 class="header code-journal">Code Journal</h2>
         </div>
+        <nav class="column-half">
+          <a href="#data-entries" class="no-bullets entries-a">Entries</a>
+        </nav>
       </div>
       <form id="form">
         <div class="row new-entry">
@@ -29,10 +32,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="column-half">
-            <div class="image-div align-end">
-              <img src="images/placeholder-image-square.jpg" alt="placeholder-image" class="placeholder-image image-update entries-img">
-            </div>
+          <div class="column-half align-end">
+            <img src="images/placeholder-image-square.jpg" alt="placeholder-image" class="placeholder-image image-update entries-img">
           </div>
           <div class="column-half">
             <div class="title-photo">
@@ -61,62 +62,20 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="data-entries">
-      <div class="row heading centered-items entries-width">
-        <div class="column-full entries-header">
-          <h2 class="header">Code Journal <span class="entries-span">Entries</span></h2>
-        </div>
-      </div>
+    <div data-view="entries" class="data-entries hidden" id="data-entries">
+
       <div class="row lovelace-row centered-items">
         <div class="column-half">
-          <div>
-            <h1 class="entries-h1">Entries</h1>
-          </div>
+          <h1 class="entries-h1">Entries</h1>
         </div>
-        <div class="column-half">
-          <div class="align-end new-button">
-            <button type="button">NEW</button>
-          </div>
+        <div class="column-half new">
+          <button type="button" class="new-button">NEW</button>
         </div>
       </div>
-      <div class="row entries-row">
-        <div class="column-half align-end">
-          <img src="images/ada-lovelace.jpg" alt="Ada Lovelace" class="entries-img lovelace-img">
-        </div>
-        <div class="column-half">
-          <h3 class="h3-entries entries-title">Ada Lovelace</h3>
-          <ul class="no-bullets lovelace-ul">
-            <li>
-              <p>Augusta Ada King, Countess of Lovelace was an English mathematician and writer, chiefly known for her work on
-                Charles Babbage's proposed mechanical general-purpose computer, the analytical Engine.
-              </p>
-              <p>She was the first to recgonize that the machine had applications beyond pure calculation, and to have published
-                the
-                first algorithm intended to be carried out by such a machine.
-              </p>
-            </li>
-          </ul>
-        </div>
+      <div class="row font-os no-entries">
+        <p>No entries have been recorded.</p>
       </div>
-      <div class="row js-entries">
-        <div class="column-half align-end">
-          <img src="images/javascript-image.jpg" alt="javascript-image" class="entries-img javascript-query">
-        </div>
-        <div class="column-half">
-          <h3 class="h3-entries entries-title">Javascript</h3>
-          <ul class="no-bullets js-ul javascript-query">
-            <li>
-              <p>
-                Javascript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.
-              </p>
-              <p>
-                Javascript is a high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic
-                typing, prototype-based object-orientation, and first-class functions.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <div class="entry-row lovelace-row"></div>
     </div>
   </div>
   <script src="js/data.js"></script>
