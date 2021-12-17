@@ -15,37 +15,67 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="form-container">
-    <div class="heading">
-      <h2 class="cj-header">Code Journal</h2>
-    </div>
+  <div class="container height-auto">
     <div data-view="entry-form">
+      <div class="row heading cj-entries">
+        <div class="column-half left-margin">
+          <h2 class="header code-journal">Code Journal</h2>
+        </div>
+        <nav class="column-half">
+          <a href="#data-entries" class="no-bullets entries-a">Entries</a>
+        </nav>
+      </div>
       <form id="form">
-        <div class="new-entry">
-          <h1>New Entry</h1>
-        </div>
-        <div class="image-row">
-          <div class="image-div">
-            <img src="images/placeholder-image-square.jpg" alt="placeholder-image" class="placeholder-image image-update">
-          </div>
-          <div class="title-photo">
-            <h3 class="h3-title font-os">Title</h3>
-            <label for="title"></label>
-            <input class="input-area text-border font-os" name="title" required type="text" size="29">
-            <h3 class="font-os photo-url">Photo URL</h3>
-            <label for="photo-url"></label>
-            <input class="input-area text-border font-os url-input" name="url" required type="url" size="29">
+        <div class="row new-entry">
+          <div class="column-full entry-left">
+            <h1>New Entry</h1>
           </div>
         </div>
-        <div class="notes-section">
-          <h3 class="h3-notes font-os">Notes</h3>
-          <label for="notes"></label>
-          <textarea class="notes-input font-os text-border" name="notes" cols="67" rows="6" required></textarea>
+        <div class="row">
+          <div class="column-half align-end">
+            <img src="images/placeholder-image-square.jpg" alt="placeholder-image" class="placeholder-image image-update entries-img">
+          </div>
+          <div class="column-half">
+            <div class="title-photo">
+              <h3 class="h3-title font-os">Title</h3>
+              <label for="title"></label>
+              <input class="input-area text-border font-os" name="title" required type="text" size="29">
+              <h3 class="font-os photo-url">Photo URL</h3>
+              <label for="photo-url"></label>
+              <input class="input-area text-border font-os url-input" name="url" required type="url" size="29">
+            </div>
+          </div>
         </div>
-        <div class="save-button">
-          <button type="submit">SAVE</button>
+        <div class="row">
+          <div class="column-full">
+            <h3 class="h3-notes font-os">Notes</h3>
+            <label for="notes"></label>
+            <div class="text-centered textarea-div">
+              <textarea class="notes-input font-os text-border" name="notes" cols="62" rows="6" required></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full align-end save-button">
+            <button type="submit">SAVE</button>
+          </div>
         </div>
       </form>
+    </div>
+    <div data-view="entries" class="data-entries hidden" id="data-entries">
+
+      <div class="row lovelace-row centered-items">
+        <div class="column-half">
+          <h1 class="entries-h1">Entries</h1>
+        </div>
+        <div class="column-half new">
+          <button type="button" class="new-button">NEW</button>
+        </div>
+      </div>
+      <div class="row font-os no-entries">
+        <p>No entries have been recorded.</p>
+      </div>
+      <div class="entry-row lovelace-row"></div>
     </div>
   </div>
   <script src="js/data.js"></script>

@@ -1,57 +1,40 @@
-.form-container {
-  text-align: center;
+.container {
   background-color: #f2f2f2;
-  height: 800px;
+}
+
+.height-auto {
+  height: 100vh auto;
 }
 
 .heading {
   background-color: #6f2da8;
   color: white;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.cj-header {
   font-family: "Proza Libre", sans-serif;
-  font-weight: 400;
-  position: relative;
-  left: 400px;
 }
 
-.new-entry {
-  width: 63%;
-  justify-content: center;
-  display: flex;
+.header {
+  font-weight: 400;
+}
+
+.left-margin {
+  margin-left: 288px;
+}
+
+.entry-left {
+  margin-left: 285px;
 }
 
 h1 {
   font-family: "Proza Libre", sans-serif;
 }
 
-.image-row {
-  display: flex;
-  justify-content: center;
-}
-
-.placeholder-image {
-  width: 90%;
-}
-
-.image-div {
-  width: 25%;
-}
-
-.title-photo {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 25%;
-}
-
 .h3-title {
   margin: 0;
   padding-bottom: 10px;
+}
+
+.entries-img {
+  width: 50%;
 }
 
 .photo-url {
@@ -60,10 +43,11 @@ h1 {
 }
 
 .h3-notes {
-  position: relative;
-  right: 310px;
-  margin-bottom: 10px;
-  margin-top: 25px;
+  margin: 25px 0 10px 288px;
+}
+
+textarea {
+  margin-left: 25px;
 }
 
 .font-os {
@@ -83,12 +67,6 @@ h1 {
   font-size: large;
 }
 
-.notes-section {
-  width: 65%;
-  position: relative;
-  left: 240px;
-}
-
 .notes-input {
   font-size: larger;
   border-radius: 4px;
@@ -99,7 +77,7 @@ h1 {
 }
 
 .save-button {
-  margin-top: 20px;
+  margin: 20px 265px 20px 0;
 }
 
 button {
@@ -107,63 +85,117 @@ button {
   border-radius: 3px;
   background-color: #6f2da8;
   color: white;
-  position: relative;
-  left: 280px;
   border: none;
 }
 
-@media screen and (max-width: 500px) {
-  .cj-header {
-    left: 18px;
-  }
+.cj-entries {
+  align-items: baseline;
+  justify-content: start;
+}
 
-  .new-entry {
-    padding-left: 18px;
-    justify-content: flex-start;
-  }
+.cj-entries > div {
+  width: 15%;
+  padding-right: 0;
+}
 
-  .image-row {
+nav.column-half {
+  padding: 0;
+}
+
+.entries-h1 {
+  width: 74%;
+  text-align: end;
+}
+
+.new {
+  text-align: center;
+  margin: 0 0 0 78px;
+}
+
+.entries-a {
+  font-size: medium;
+  padding-left: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.lovelace-ul {
+  padding: 0;
+  margin-top: 0;
+  width: 60%;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+}
+
+.h3-entries {
+  margin: 0;
+}
+
+.entries-row {
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {
+  .row {
     flex-direction: column;
   }
 
-  .placeholder-image {
-    width: 375px;
-    height: 250px;
-    margin-left: 18px;
+  .cj-entries {
+    flex-direction: row;
   }
 
-  .title-photo {
+  .cj-entries > div {
+    width: 70%;
+    margin: 0 0 0 25px;
+  }
+
+  .entry-left {
+    margin-left: 0;
+  }
+
+  .entries-img {
+    width: 100%;
+  }
+
+  .h3-title {
     padding-top: 20px;
-    margin-left: 15px;
-  }
-
-  .notes-section {
-    left: 0;
-  }
-
-  .form-container {
-    text-align: start;
-    height: 850px;
   }
 
   .h3-notes {
-    position: revert;
-    margin-left: 15px;
+    margin: 25px 0 10px;
   }
 
-  .input-area {
-    padding-right: 50px;
-    padding-bottom: 8px;
-    padding-top: 8px;
-    font-size: larger;
+  textarea {
+    margin-left: 0;
+    width: 92%;
   }
 
-  .notes-input {
-    margin-left: 15px;
-    width: 380px;
+  .lovelace-row {
+    flex-direction: row;
   }
 
-  button {
-    left: 330px;
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  .new {
+    text-align: end;
+  }
+
+  .lovelace-img {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+
+  .lovelace-ul {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  li > p {
+    line-height: 1.6;
   }
 }
