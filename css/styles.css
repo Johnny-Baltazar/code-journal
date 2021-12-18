@@ -137,6 +137,10 @@ ul.no-bullets {
   padding-bottom: 30px;
 }
 
+i {
+  margin: 0 0 0 200px;
+}
+
 @media screen and (max-width: 480px) {
   .row {
     flex-direction: column;
