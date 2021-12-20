@@ -30,9 +30,10 @@ $form.addEventListener('submit', function (event) {
     url: url,
     notes: notes
   };
+
   data.entries.unshift(entries);
   $dataEntry.prepend(renderData(entries));
-  entries.nextEntryId = data.nextEntryId++;
+  entries.dataEntryId = data.nextEntryId++;
 
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
@@ -42,10 +43,11 @@ $form.addEventListener('submit', function (event) {
 
   data.view = 'entries';
   $container.setAttribute('class', 'container height-auto ');
+
 });
 
 document.addEventListener('DOMContentLoaded', function (event) {
-
+  event.preventDefault();
   for (var i = 0; i < data.entries.length; i++) {
     var entriesRow = renderData(data.entries[i]);
     $dataViewEntries.appendChild(entriesRow);
@@ -57,9 +59,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
   var $editEntry = document.querySelectorAll('.edit-entry');
+
   for (var j = 0; j < $editEntry.length; j++) {
     $editEntry[j].addEventListener('click', function (event) {
-      // console.log('clicked');
+      var dataEntryIdValue = event.target.getAttribute('data-entry-id');
+
+      var parsedDataEntryIdValue = parseInt(dataEntryIdValue);
+      $dataViewEntries.className = 'hidden';
+      $form.classList.remove('hidden');
+      for (var h = 0; h < data.entries.length; h++) {
+        if (parsedDataEntryIdValue === data.entries[h].dataEntryId) {
+          data.editing = data.entries[h];
+        }
+      }
+
     });
   }
 });
@@ -83,28 +96,32 @@ function renderData(entries) {
   divColumnHalfTwo.setAttribute('class', 'column-half');
   entriesRow.append(divColumnHalfTwo);
 
-  var h3Entries = document.createElement('h3');
-  h3Entries.setAttribute('class', 'h3-entries entries-title');
-  var entryTitle = document.createTextNode(entries.title);
-  h3Entries.appendChild(entryTitle);
-  divColumnHalfTwo.appendChild(h3Entries);
-
-  var iTag = document.createElement('i');
-  iTag.setAttribute('class', 'fas fa-pencil-alt');
-  iTag.setAttribute('data-entry-id', entries.nextEntryId);
-  h3Entries.append(iTag);
-
   var divUl = document.createElement('ul');
   divUl.setAttribute('class', 'no-bullets lovelace-ul edit-entry');
   divColumnHalfTwo.append(divUl);
 
-  var divUlLi = document.createElement('li');
-  divUl.append(divUlLi);
+  var divIlOne = document.createElement('li');
+  divUl.append(divIlOne);
+
+  var h3Entries = document.createElement('h3');
+  var entryTitle = document.createTextNode(entries.title);
+  h3Entries.appendChild(entryTitle);
+  h3Entries.setAttribute('class', 'h3-entries entries-title');
+  divIlOne.append(h3Entries);
+
+  var liTwo = document.createElement('li');
+  var iTag = document.createElement('i');
+  iTag.setAttribute('data-entry-id', entries.dataEntryId);
+  iTag.setAttribute('class', 'fas fa-pencil-alt');
+  liTwo.append(iTag);
+  divUl.append(liTwo);
 
   var pOne = document.createElement('p');
   var pNotes = document.createTextNode(entries.notes);
+  var liThree = document.createElement('li');
   pOne.appendChild(pNotes);
-  divUlLi.appendChild(pOne);
+  liThree.append(pOne);
+  divUl.append(liThree);
 
   $noEntries.remove();
 
@@ -124,10 +141,6 @@ $newButton.addEventListener('click', function (event) {
   event.preventDefault();
   $dataViewEntries.className = 'hidden';
   $form.classList.remove('hidden');
-  // $container.setAttribute('class', 'height-auto');
+
   data.view = 'entry-form';
 });
-
-// $editEntry = document.querySelectorAll('.edit-entry');
-// console.log(document.querySelectorAll('.edit-entry'));
-// document.querySelectorAll('.edit-entry').addEventListener('click');
