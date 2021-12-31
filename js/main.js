@@ -10,7 +10,8 @@ var $dataViewEntries = document.querySelector('.data-entries');
 var $dataEntry = document.querySelector('.entry-row');
 var $noEntries = document.querySelector('.no-entries');
 var $container = document.querySelector('.container');
-// var $editEntry;
+var $titleInput = document.querySelector('input');
+var $notesInput = document.querySelector('.notes-input');
 
 $input.addEventListener('input', inputUrl);
 
@@ -35,6 +36,12 @@ $form.addEventListener('submit', function (event) {
   $dataEntry.prepend(renderData(entries));
   entries.dataEntryId = data.nextEntryId++;
 
+  if (data.editing !== null) {
+    $dataEntry.replaceWith(renderData(entries));
+  }
+
+  data.editing = null;
+
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 
@@ -43,11 +50,11 @@ $form.addEventListener('submit', function (event) {
 
   data.view = 'entries';
   $container.setAttribute('class', 'container height-auto ');
-
 });
 
 document.addEventListener('DOMContentLoaded', function (event) {
   event.preventDefault();
+
   for (var i = 0; i < data.entries.length; i++) {
     var entriesRow = renderData(data.entries[i]);
     $dataViewEntries.appendChild(entriesRow);
@@ -63,16 +70,19 @@ document.addEventListener('DOMContentLoaded', function (event) {
   for (var j = 0; j < $editEntry.length; j++) {
     $editEntry[j].addEventListener('click', function (event) {
       var dataEntryIdValue = event.target.getAttribute('data-entry-id');
-
       var parsedDataEntryIdValue = parseInt(dataEntryIdValue);
+
       $dataViewEntries.className = 'hidden';
       $form.classList.remove('hidden');
       for (var h = 0; h < data.entries.length; h++) {
         if (parsedDataEntryIdValue === data.entries[h].dataEntryId) {
           data.editing = data.entries[h];
+          $titleInput.value = data.entries[h].title;
+          $input.value = data.entries[h].url;
+          $notesInput.value = data.entries[h].notes;
+          $img.setAttribute('src', $input.value);
         }
       }
-
     });
   }
 });
@@ -135,6 +145,7 @@ $entriesA.addEventListener('click', function (event) {
   $form.className = 'hidden';
 
   data.view = 'entries';
+  data.editing = null;
 });
 
 $newButton.addEventListener('click', function (event) {
