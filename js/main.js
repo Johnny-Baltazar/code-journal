@@ -12,6 +12,7 @@ var $noEntries = document.querySelector('.no-entries');
 var $container = document.querySelector('.container');
 var $titleInput = document.querySelector('input');
 var $notesInput = document.querySelector('.notes-input');
+var $EntryHeading = document.querySelector('.column-full > h1');
 
 $input.addEventListener('input', inputUrl);
 
@@ -60,11 +61,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
     $dataViewEntries.appendChild(entriesRow);
   }
 
-  if (data.view === 'entries') {
-    $form.className = 'hidden';
-    $dataViewEntries.classList.remove('hidden');
-  }
-
   var $editEntry = document.querySelectorAll('.edit-entry');
 
   for (var j = 0; j < $editEntry.length; j++) {
@@ -74,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
       $dataViewEntries.className = 'hidden';
       $form.classList.remove('hidden');
+      $EntryHeading.textContent = 'Edit Entry';
+
       for (var h = 0; h < data.entries.length; h++) {
         if (parsedDataEntryIdValue === data.entries[h].dataEntryId) {
           data.editing = data.entries[h];
@@ -153,5 +151,19 @@ $newButton.addEventListener('click', function (event) {
   $dataViewEntries.className = 'hidden';
   $form.classList.remove('hidden');
 
+  $EntryHeading.textContent = 'New Entry';
+  $titleInput.value = '';
+  $input.value = '';
+  $notesInput.value = '';
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+
   data.view = 'entry-form';
 });
+
+if (data.view === 'entry-form') {
+  $dataViewEntries.className = 'hidden';
+  $form.classList.remove('hidden');
+} else {
+  $form.className = 'hidden';
+  $dataViewEntries.classList.remove('hidden');
+}
