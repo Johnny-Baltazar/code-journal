@@ -148,6 +148,54 @@ li:nth-child(3) {
   bottom: 20px;
 }
 
+form > div:nth-child(4) {
+  align-items: center;
+  margin: 0 0 0 130px;
+}
+
+.delete-entry {
+  text-align: end;
+}
+
+.delete-link {
+  color: red;
+  text-decoration: underline;
+}
+
+.delete-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: rgb(0 0 0 / 70%);
+  height: 130vh;
+  align-items: center;
+}
+
+.modal-open {
+  text-align: center;
+  background-color: #f2f2f2;
+  width: 430px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.modal-question {
+  margin: 25px 0 50px;
+}
+
+.cancel-button {
+  background-color: gray;
+  margin-right: 45%;
+  color: black;
+  font-weight: 700;
+}
+
+.confirm-button {
+  background-color: red;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 480px) {
   .row {
     flex-direction: column;
