@@ -137,6 +137,17 @@ ul.no-bullets {
   padding-bottom: 30px;
 }
 
+li:nth-child(2) {
+  text-align: end;
+  position: relative;
+  bottom: 20px;
+}
+
+li:nth-child(3) {
+  position: relative;
+  bottom: 20px;
+}
+
 @media screen and (max-width: 480px) {
   .row {
     flex-direction: column;
