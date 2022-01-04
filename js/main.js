@@ -15,6 +15,7 @@ var $notesInput = document.querySelector('.notes-input');
 var $EntryHeading = document.querySelector('.column-full > h1');
 var $deleteLink = document.querySelector('.delete-link');
 var $deleteModal = document.querySelector('.delete-modal');
+var $cancelButton = document.querySelector('.cancel-button');
 // var $deleteEntry = document.querySelector('.delete-entry');
 
 $input.addEventListener('input', inputUrl);
@@ -173,4 +174,8 @@ if (data.view === 'entry-form') {
 
 $deleteLink.addEventListener('click', function (event) {
   $deleteModal.classList.remove('hidden');
+});
+
+$cancelButton.addEventListener('click', function (event) {
+  $deleteModal.className = 'hidden';
 });
