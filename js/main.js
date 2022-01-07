@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   if (data.view === 'entry-form') {
     $dataViewEntries.className = 'hidden';
     $form.classList.remove('hidden');
-    $deleteLink.className = 'hidden';
+    $deleteLink.className = 'hidden delete-entry column-half';
   } else {
     $form.className = 'hidden';
     $dataViewEntries.classList.remove('hidden');
@@ -154,7 +154,6 @@ $entriesA.addEventListener('click', function (event) {
 
   $dataViewEntries.classList.remove('hidden');
   $deleteLink.classList.remove('hidden');
-  $deleteModal.classList.remove('hidden');
   $form.className = 'hidden';
 
   data.view = 'entries';
@@ -166,8 +165,7 @@ $newButton.addEventListener('click', function (event) {
   event.preventDefault();
   $dataViewEntries.className = 'hidden';
   $form.classList.remove('hidden');
-  $deleteLink.className = 'hidden';
-  $deleteModal.className = 'hidden';
+  $deleteLink.className = 'hidden delete-link font-os';
 
   $EntryHeading.textContent = 'New Entry';
   $titleInput.value = '';
@@ -178,13 +176,14 @@ $newButton.addEventListener('click', function (event) {
   data.view = 'entry-form';
 });
 
-$deleteLink.addEventListener('click', function (event) {
-  $deleteModal.classList.remove('hidden');
-});
-
 $cancelButton.addEventListener('click', function (event) {
   event.preventDefault();
-  $deleteModal.className = 'hidden';
+  $deleteModal.className = 'hidden delete-modal row';
+});
+
+$deleteLink.addEventListener('click', function (event) {
+  event.preventDefault();
+  $deleteModal.classList.remove('hidden');
 });
 
 $confirmButton.addEventListener('click', function (event) {
@@ -201,13 +200,8 @@ $confirmButton.addEventListener('click', function (event) {
 
   data.editing = null;
   data.nextEntryId--;
-
-  if (data.entries !== []) {
-    $dataViewEntries.classList.remove('hidden');
-  } else {
-    $noEntries.classList.remove('hidden');
-  }
+  $dataViewEntries.classList.remove('hidden');
 
   $form.className = 'hidden';
-  $deleteModal.className = 'hidden';
+  $deleteModal.className = 'hidden delete-modal row';
 });
