@@ -7,12 +7,16 @@ var $form = document.querySelector('#form');
 var $entriesA = document.querySelector('.entries-a');
 var $newButton = document.querySelector('.new-button');
 var $dataViewEntries = document.querySelector('.data-entries');
-var $dataEntry = document.querySelector('.entry-row');
+var $entryRow = document.querySelector('.entry-row');
 var $noEntries = document.querySelector('.no-entries');
 var $container = document.querySelector('.container');
 var $titleInput = document.querySelector('input');
 var $notesInput = document.querySelector('.notes-input');
 var $EntryHeading = document.querySelector('.column-full > h1');
+var $deleteLink = document.querySelector('.delete-link');
+var $deleteModal = document.querySelector('.delete-modal');
+var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
 
 $input.addEventListener('input', inputUrl);
 
@@ -34,11 +38,11 @@ $form.addEventListener('submit', function (event) {
   };
 
   data.entries.unshift(entries);
-  $dataEntry.prepend(renderData(entries));
+  $entryRow.prepend(renderData(entries));
   entries.dataEntryId = data.nextEntryId++;
 
   if (data.editing !== null) {
-    $dataEntry.replaceWith(renderData(entries));
+    $entryRow.replaceWith(renderData(entries));
   }
 
   data.editing = null;
@@ -82,6 +86,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
       }
     });
+  }
+
+  if (data.view === 'entry-form') {
+    $dataViewEntries.className = 'hidden';
+    $form.classList.remove('hidden');
+    $deleteLink.className = 'hidden delete-entry column-half';
+  } else {
+    $form.className = 'hidden';
+    $dataViewEntries.classList.remove('hidden');
   }
 });
 
@@ -131,7 +144,7 @@ function renderData(entries) {
   liThree.append(pOne);
   divUl.append(liThree);
 
-  $noEntries.remove();
+  $noEntries.className = 'hidden';
 
   return entriesRow;
 }
@@ -140,16 +153,19 @@ $entriesA.addEventListener('click', function (event) {
   event.preventDefault();
 
   $dataViewEntries.classList.remove('hidden');
+  $deleteLink.classList.remove('hidden');
   $form.className = 'hidden';
 
   data.view = 'entries';
   data.editing = null;
+
 });
 
 $newButton.addEventListener('click', function (event) {
   event.preventDefault();
   $dataViewEntries.className = 'hidden';
   $form.classList.remove('hidden');
+  $deleteLink.className = 'hidden delete-link font-os';
 
   $EntryHeading.textContent = 'New Entry';
   $titleInput.value = '';
@@ -160,10 +176,32 @@ $newButton.addEventListener('click', function (event) {
   data.view = 'entry-form';
 });
 
-if (data.view === 'entry-form') {
-  $dataViewEntries.className = 'hidden';
-  $form.classList.remove('hidden');
-} else {
-  $form.className = 'hidden';
+$cancelButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  $deleteModal.className = 'hidden delete-modal row';
+});
+
+$deleteLink.addEventListener('click', function (event) {
+  event.preventDefault();
+  $deleteModal.classList.remove('hidden');
+});
+
+$confirmButton.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  var $entriesRow = document.querySelectorAll('.entries-row');
+
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.editing.dataEntryId === data.entries[i].dataEntryId) {
+      $entriesRow[i].remove();
+      data.entries.splice(i, 1);
+    }
+  }
+
+  data.editing = null;
+  data.nextEntryId--;
   $dataViewEntries.classList.remove('hidden');
-}
+
+  $form.className = 'hidden';
+  $deleteModal.className = 'hidden delete-modal row';
+});
