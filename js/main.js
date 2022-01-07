@@ -144,7 +144,7 @@ function renderData(entries) {
   liThree.append(pOne);
   divUl.append(liThree);
 
-  $noEntries.remove();
+  $noEntries.className = 'hidden';
 
   return entriesRow;
 }
@@ -167,6 +167,7 @@ $newButton.addEventListener('click', function (event) {
   $dataViewEntries.className = 'hidden';
   $form.classList.remove('hidden');
   $deleteLink.className = 'hidden';
+  $deleteModal.className = 'hidden';
 
   $EntryHeading.textContent = 'New Entry';
   $titleInput.value = '';
@@ -200,7 +201,13 @@ $confirmButton.addEventListener('click', function (event) {
 
   data.editing = null;
   data.nextEntryId--;
-  $dataViewEntries.classList.remove('hidden');
+
+  if (data.entries !== []) {
+    $dataViewEntries.classList.remove('hidden');
+  } else {
+    $noEntries.classList.remove('hidden');
+  }
+
   $form.className = 'hidden';
   $deleteModal.className = 'hidden';
 });

@@ -149,12 +149,11 @@ li:nth-child(3) {
 }
 
 form > div:nth-child(4) {
-  align-items: center;
-  margin: 0 0 0 130px;
+  margin: 0 0 0 145px;
 }
 
 .delete-entry {
-  text-align: end;
+  text-align: center;
 }
 
 .delete-link {
@@ -256,5 +255,17 @@ form > div:nth-child(4) {
 
   li > p {
     line-height: 1.6;
+  }
+
+  form > div:nth-child(4) {
+    margin: 0;
+  }
+
+  .delete-entry {
+    text-align: start;
+  }
+
+  .save-button {
+    margin: 20px 0;
   }
 }
